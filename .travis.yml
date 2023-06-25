@@ -19,6 +19,6 @@ script:
   - docker tag simple-reverse-proxy divdocker789/simple-reverse-proxy:latest
 
 after_success:
-  - echo "7cgvacbcb9" | docker login -u "divdocker789" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push divdocker789/simple-reverse-proxy
 
